@@ -9,10 +9,15 @@ import { UserLoginService } from '../user-login.service';
 })
 export class LoginComponent implements OnInit {
   currUser = new User();
+  error = false;
 
   constructor(private loginService: UserLoginService) { }
 
   ngOnInit() {
   }
 
+  login(): void {
+    this.error = this.loginService.login(this.currUser);
+    this.currUser = new User();
+  }
 }

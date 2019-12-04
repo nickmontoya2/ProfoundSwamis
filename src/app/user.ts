@@ -1,5 +1,6 @@
 import { Car } from './car';
 import { Transaction } from './transaction';
+import { NullTemplateVisitor } from '@angular/compiler';
 
 export class User {
   userId: number;
@@ -10,5 +11,13 @@ export class User {
   cars: Car[];
   transactions: Transaction[];
 
-  constructor() {}
+  constructor() {
+    this.userId = null;
+    this.name = null;
+    this.username = null;
+    this.password = null;
+    this.balance = null;
+    this.cars = [];
+    this.transactions = [];
+  }
 }
