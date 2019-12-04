@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.error = this.loginService.login(this.currUser);
+    this.error = !(this.loginService.login(this.currUser));
     this.currUser = new User();
   }
 }

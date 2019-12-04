@@ -21,6 +21,7 @@ export class UserLoginService {
   * I don't think login is a situation to create an observable since it will just be 1 post request
   */
   login(currUser: User): boolean {
+    console.log('Username: ', currUser.username, 'Password: ', currUser.password)
     for (const user of USERS) {
       if (user.username === currUser.username && user.password === currUser.password) {
         return true;
