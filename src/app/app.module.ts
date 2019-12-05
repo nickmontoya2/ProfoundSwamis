@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { MultiCarComponent } from './multi-car/multi-car.component';
+import { SingleCarComponent } from './single-car/single-car.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MultiCarComponent } from './multi-car/multi-car.component';
     NavComponent,
     LoginComponent,
     MultiCarComponent,
+    SingleCarComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MultiCarComponent } from './multi-car/multi-car.component';
+import { SingleCarComponent } from './single-car/single-car.component';
 
 
 const routes: Routes = [
@@ -9,6 +10,8 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   }, {
     path: 'multi-car', component: MultiCarComponent
+  }, {
+    path: 'car/:carId', component: SingleCarComponent
   }, {
     path: '', redirectTo: '/multi-car', pathMatch: 'full'
   }];
