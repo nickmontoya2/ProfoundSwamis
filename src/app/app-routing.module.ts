@@ -10,7 +10,7 @@ const routes: Routes = [
   }, {
     path: 'multi-car', component: MultiCarComponent
   }, {
-    path: '', redirectTo: '/multi-car', pathMatch: 'full'
+    path: '', redirectTo: '/login', pathMatch: 'full'
   }];
 
 @NgModule({

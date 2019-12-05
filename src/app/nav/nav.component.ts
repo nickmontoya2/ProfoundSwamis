@@ -1,3 +1,4 @@
+import { UserLoginService } from './../user-login.service';
 import { Component, OnInit } from '@angular/core';
 // import * as $ from 'jquery';
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  loggedIn = false;
 
-  ngOnInit() {}
+  constructor(private userLoginService: UserLoginService) { }
+
+  ngOnInit() {
+    this.loggedIn = this.userLoginService.currUser.loggedIn;
+  }
 
   openNav() {
     document.getElementById('mySidenav').style.width = '250px';
@@ -20,5 +25,4 @@ export class NavComponent implements OnInit {
     document.getElementById('mySidenav').style.width = '0';
     document.body.style.backgroundColor = 'white';
   }
-
 }

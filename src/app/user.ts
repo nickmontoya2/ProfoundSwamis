@@ -10,6 +10,7 @@ export class User {
   balance: number;
   cars: Car[];
   transactions: Transaction[];
+  loggedIn: boolean;
 
   constructor() {
     this.userId = null;
