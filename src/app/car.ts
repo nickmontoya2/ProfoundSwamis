@@ -11,7 +11,7 @@ export class Car {
   description: string;
   // status will tell whether or not car is for sale
   // this can be a look up table: 0 = "not for sale"; 1 = "for sale"
-  // maybe use an ENUM here on the backend to define these states
+  // maybe use an ENUM here on the backend to define these states (wouldn't be 0,1 based anymore)
   status: number;
 
   constructor() {}
