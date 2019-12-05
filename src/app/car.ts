@@ -9,6 +9,10 @@ export class Car {
   color: string;
   transmission: string;
   description: string;
+  // status will tell whether or not car is for sale
+  // this can be a look up table: 0 = "not for sale"; 1 = "for sale"
+  // maybe use an ENUM here on the backend to define these states
+  status: number;
 
   constructor() {}
 }

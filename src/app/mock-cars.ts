@@ -1,6 +1,6 @@
 import { Car } from './car';
 
-export const CARS: Car[] = [{
+export const MOCK_CARS: Car[] = [{
   carId: 1,
   make: 'Kia',
   model: 'Soul',
@@ -10,7 +10,8 @@ export const CARS: Car[] = [{
   fuel: 'gasoline',
   color: 'Silver',
   transmission: 'automatic',
-  description: 'Beautiful hamster car'
+  description: 'Beautiful hamster car',
+  status: 1
 }, {
   carId: 2,
   make: 'Ford',
@@ -21,7 +22,8 @@ export const CARS: Car[] = [{
   fuel: 'gasoline',
   color: 'Red',
   transmission: 'automatic',
-  description: 'American Muscle'
+  description: 'American Muscle',
+  status: 1
 }, {
   carId: 3,
   make: 'Chevy',
@@ -32,5 +34,6 @@ export const CARS: Car[] = [{
   fuel: 'gasoline',
   color: 'Black',
   transmission: 'automatic',
-  description: 'Made to haul'
+  description: 'Made to haul',
+  status: 1
 }];
