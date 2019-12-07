@@ -17,6 +17,7 @@ export class CarService {
   }
 
   getCar(carId: number): Observable<Car> {
+    // Eventually will be GET request to find specific car
     return of(MOCK_CARS.find(car => car.carId === carId));
   }
 }
