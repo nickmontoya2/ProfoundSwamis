@@ -8,17 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  loggedIn = false;
+  // loggedIn = false;
 
-  constructor(private userLoginService: UserLoginService) { }
+  constructor(public userLoginService: UserLoginService) { }
 
   ngOnInit() {
-    this.loggedIn = this.userLoginService.currUser.loggedIn;
+    // this.loggedIn = this.userLoginService.currUser.loggedIn;
+    // console.log("test: " + this.userLoginService.currUser.loggedIn);
   }
 
   openNav() {
     document.getElementById('mySidenav').style.width = '250px';
-    document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
+    // document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
   }
 
   closeNav() {

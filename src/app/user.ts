@@ -20,5 +20,6 @@ export class User {
     this.balance = null;
     this.cars = [];
     this.transactions = [];
+    this.loggedIn = false;
   }
 }

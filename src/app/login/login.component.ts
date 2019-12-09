@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   user = new User();
   error = false;
 
-  constructor(private loginService: UserLoginService, private router: Router) { }
+  constructor(public loginService: UserLoginService, private router: Router) { }
 
   ngOnInit() {
   }

@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'angular-car-sales';
   loggedIn = false;
 
-  constructor(private userLoginService: UserLoginService, router: Router) {
+  constructor(public userLoginService: UserLoginService, router: Router) {
 
   //   if (userLoginService.currUser != null) {
   //     if (userLoginService.currUser.loggedIn) {

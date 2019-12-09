@@ -5,8 +5,8 @@ export const USERS: User[] = [
   {
     userId: 1,
     name: 'Marc',
-    username: 'sampleUser',
-    password: 'password',
+    username: 'user',
+    password: 'pass',
     balance: 5000000,
     cars: [],
     transactions: [],
