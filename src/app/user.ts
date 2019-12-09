@@ -10,6 +10,7 @@ export class User {
   balance: number;
   cars: Car[];
   transactions: Transaction[];
+  loggedIn: boolean;
 
   constructor() {
     this.userId = null;
@@ -19,5 +20,6 @@ export class User {
     this.balance = null;
     this.cars = [];
     this.transactions = [];
+    this.loggedIn = false;
   }
 }

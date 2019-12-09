@@ -11,11 +11,11 @@ const routes: Routes = [
   }, {
     path: 'multi-car', component: MultiCarComponent, pathMatch: 'full'
   }, {
-    path: 'multi-car:userId', component: MultiCarComponent, pathMatch: 'full'
+    path: 'multi-car/:userId', component: MultiCarComponent, pathMatch: 'full'
   }, {
     path: 'car/:carId', component: SingleCarComponent
   }, {
-    path: '', redirectTo: '/multi-car', pathMatch: 'full'
+    path: '', redirectTo: '/login', pathMatch: 'full'
   }];
 
 @NgModule({

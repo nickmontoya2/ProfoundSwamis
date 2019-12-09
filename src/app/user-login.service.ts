@@ -10,8 +10,8 @@ import { USERS } from './mock-users';
 export class UserLoginService {
 
   // users: User[] = of(USERS);
-
-  currentUser = new User();
+  users: User[] = USERS;
+  currUser: User = new User();
 
   constructor() { }
 
@@ -26,10 +26,13 @@ export class UserLoginService {
     console.log('Username: ', currUser.username, 'Password: ', currUser.password);
     for (const user of USERS) {
       if (user.username === currUser.username && user.password === currUser.password) {
-        this.currentUser = user;
-        return true;
+        this.currUser = user;
+        this.currUser.loggedIn = true;
+        console.log(this.currUser.name);
+        return this.currUser.loggedIn;
       }
     }
-    return false;
+    this.currUser.loggedIn = false;
+    return this.currUser.loggedIn;
   }
 }
