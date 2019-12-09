@@ -22,7 +22,8 @@ export class CarService {
   }
 
   getUsersCars(userId: number): Observable<Car[]> {
-    // Send userId to backend & return list of all their cars
+    // Send request to backend & return list of all their cars
+    // Will use session on backend to grab userId
     return of(MOCK_CARS.filter(car => car.ownerId === userId));
   }
 }

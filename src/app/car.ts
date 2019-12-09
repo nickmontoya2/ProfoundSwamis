@@ -6,8 +6,11 @@ export class Car {
   value: number;
   mileage: number;
   fuel: string;
-  color: string;
+  exteriorColor: string;
+  interiorColor: string;
   transmission: string;
+  engine: string;
+  driveType: string;
   description: string;
   // status will tell whether or not car is for sale
   // this can be a look up table: 0 = "not for sale"; 1 = "for sale"

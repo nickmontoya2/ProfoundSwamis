@@ -23,6 +23,7 @@ export class MultiCarComponent implements OnInit {
     });
   }
 
-  // Get cars based on userId
+  // Get cars based on userId, won't pass userId from front-end,
+  // grabbed from backend session storage
 
 }
