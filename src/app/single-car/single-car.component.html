@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- Header area, maybe add photo of vehicle here -->
+  <div class="jumbotron">
+    <h1 class="display-3"> {{ car.year }} {{ car.make }} {{ car.model }} </h1>
+    <p class="lead"> {{ car.description }} </p>
+    <p class="float-right">
+      ${{ car.value }}
+      <button *ngIf="car.status" type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirmModal" role="button">Purchase</button>
+    </p>
+  </div>
+  <!-- Area to display other fields -->
+  <table class="table table-striped table-light">
+    <!-- no need for thead -->
+    <tbody>
+      <tr>
+        <th scope="row">Mileage</th>
+        <th> {{ car.mileage }} </th>
+      </tr>
+      <tr>
+        <th scope="row">Transmission</th>
+        <th> {{ car.transmission }} </th>
+      </tr>
+      <tr>
+        <th scope="row">Fuel</th>
+        <th> {{ car.fuel }} </th>
+      </tr>
+      <tr>
+        <th scope="row">Exterior Color</th>
+        <th> {{ car.exteriorColor }} </th>
+      </tr>
+      <tr>
+        <th scope="row">Interior Color</th>
+        <th> {{ car.interiorColor }} </th>
+      </tr>
+      <tr>
+        <th scope="row">Engine</th>
+        <th> {{ car.engine }} </th>
+      </tr>
+      <tr>
+        <th scope="row">Drive Type</th>
+        <th> {{ car.driveType }} </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Purchase</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to buy this {{ car.year }} {{ car.make }} {{ car.model }}? </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Purchase</button>
+      </div>
+    </div>
+  </div>
+</div>

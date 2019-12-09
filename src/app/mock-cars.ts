@@ -8,10 +8,14 @@ export const MOCK_CARS: Car[] = [{
   value: 12000,
   mileage: 70000,
   fuel: 'gasoline',
-  color: 'Silver',
+  exteriorColor: 'Silver',
+  interiorColor: 'Black',
   transmission: 'automatic',
+  engine: '4-Cylinder',
+  driveType: '2 wheel drive - front',
   description: 'Beautiful hamster car',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
   carId: 2,
   make: 'Ford',
@@ -20,10 +24,14 @@ export const MOCK_CARS: Car[] = [{
   value: 30000,
   mileage: 10000,
   fuel: 'gasoline',
-  color: 'Red',
+  exteriorColor: 'Red',
+  interiorColor: 'Charcoal',
   transmission: 'automatic',
+  engine: '6-Cylinder',
+  driveType: '2 wheel drive - rear',
   description: 'American Muscle',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
   carId: 3,
   make: 'Chevy',
@@ -32,10 +40,14 @@ export const MOCK_CARS: Car[] = [{
   value: 22000,
   mileage: 35000,
   fuel: 'gasoline',
-  color: 'Black',
+  exteriorColor: 'Black',
+  interiorColor: 'Beige Leather',
   transmission: 'automatic',
+  engine: '6-Cylinder',
+  driveType: '4 wheel drive',
   description: 'Made to haul',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
   carId: 4,
   make: 'Chevy',
@@ -44,32 +56,44 @@ export const MOCK_CARS: Car[] = [{
   value: 18000,
   mileage: 42350,
   fuel: 'gasoline',
-  color: 'Blue',
+  exteriorColor: 'Blue',
+  interiorColor: 'White',
   transmission: 'automatic',
+  engine: '6-Cylinder',
+  driveType: '2 wheel drive - rear',
   description: 'Dope Camaro goes woo woo',
-  status: 1
+  status: 1,
+  ownerId: 2
 }, {
-  carId: 5,
+  carId: 1,
   make: 'Kia',
   model: 'Soul',
   year: 2011,
   value: 12000,
   mileage: 70000,
   fuel: 'gasoline',
-  color: 'Silver',
+  exteriorColor: 'Silver',
+  interiorColor: 'Black',
   transmission: 'automatic',
+  engine: '4-Cylinder',
+  driveType: '2 wheel drive - front',
   description: 'Beautiful hamster car',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
-  carId: 6,
+  carId: 3,
   make: 'Chevy',
   model: 'Silverado',
   year: 2015,
   value: 22000,
   mileage: 35000,
   fuel: 'gasoline',
-  color: 'Black',
+  exteriorColor: 'Black',
+  interiorColor: 'Beige Leather',
   transmission: 'automatic',
+  engine: '6-Cylinder',
+  driveType: '4 wheel drive',
   description: 'Made to haul',
-  status: 1
+  status: 1,
+  ownerId: 1
 }];

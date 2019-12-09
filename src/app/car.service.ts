@@ -15,4 +15,15 @@ export class CarService {
     // where the backend will grab userId from session state & return all 'for sale' cars
     return of(MOCK_CARS);
   }
+
+  getCar(carId: number): Observable<Car> {
+    // Eventually will be GET request to find specific car
+    return of(MOCK_CARS.find(car => car.carId === carId));
+  }
+
+  getUsersCars(userId: number): Observable<Car[]> {
+    // Send request to backend & return list of all their cars
+    // Will use session on backend to grab userId
+    return of(MOCK_CARS.filter(car => car.ownerId === userId));
+  }
 }

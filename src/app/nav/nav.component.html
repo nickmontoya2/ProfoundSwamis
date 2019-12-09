@@ -2,8 +2,9 @@
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
   <a [routerLink]="['/multi-car']">All Cars</a>
   <a *ngIf="!userLoginService.currUser.loggedIn" [routerLink]="['/login']">Login</a>
-  <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/login']">My Cars</a>
   <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/sell']">Sell a car</a>
+  <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/my-cars']">My Cars</a>
+
 </div>
 
 <div id="main">

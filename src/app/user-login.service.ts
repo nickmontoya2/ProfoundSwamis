@@ -12,6 +12,7 @@ export class UserLoginService {
   // users: User[] = of(USERS);
   users: User[] = USERS;
   currUser: User = new User();
+
   constructor() { }
 
   /*
