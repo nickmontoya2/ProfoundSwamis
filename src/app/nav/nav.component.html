@@ -1,11 +1,13 @@
-<div *ngIf="userLoginService.currUser.loggedIn" id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
   <a [routerLink]="['/multi-car']">All Cars</a>
-  <a [routerLink]="['/login']">Login</a>
+  <a *ngIf="!userLoginService.currUser.loggedIn" [routerLink]="['/login']">Login</a>
+  <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/login']">My Cars</a>
+  <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/sell']">Sell a car</a>
 </div>
 
 <div id="main">
-  <span *ngIf="userLoginService.currUser.loggedIn" style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
-  <span *ngIf="userLoginService.currUser.loggedIn" class="float-right greeting">Hello, User</span>
-  <span>Car Sales</span>
+  <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+  <span *ngIf="userLoginService.currUser.loggedIn" class="float-right greeting">Hello, {{userLoginService.currUser.name}}</span>
+  <div class="text-center">Car Sales</div>
 </div>
