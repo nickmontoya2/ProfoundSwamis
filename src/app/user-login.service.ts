@@ -11,6 +11,8 @@ export class UserLoginService {
 
   // users: User[] = of(USERS);
 
+  currentUser = new User();
+
   constructor() { }
 
   /*
@@ -24,6 +26,7 @@ export class UserLoginService {
     console.log('Username: ', currUser.username, 'Password: ', currUser.password);
     for (const user of USERS) {
       if (user.username === currUser.username && user.password === currUser.password) {
+        this.currentUser = user;
         return true;
       }
     }

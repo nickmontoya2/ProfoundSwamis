@@ -11,7 +11,8 @@ export const MOCK_CARS: Car[] = [{
   color: 'Silver',
   transmission: 'automatic',
   description: 'Beautiful hamster car',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
   carId: 2,
   make: 'Ford',
@@ -23,7 +24,8 @@ export const MOCK_CARS: Car[] = [{
   color: 'Red',
   transmission: 'automatic',
   description: 'American Muscle',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
   carId: 3,
   make: 'Chevy',
@@ -35,7 +37,8 @@ export const MOCK_CARS: Car[] = [{
   color: 'Black',
   transmission: 'automatic',
   description: 'Made to haul',
-  status: 1
+  status: 1,
+  ownerId: 1
 }, {
   carId: 4,
   make: 'Chevy',
@@ -47,7 +50,8 @@ export const MOCK_CARS: Car[] = [{
   color: 'Blue',
   transmission: 'automatic',
   description: 'Dope Camaro goes woo woo',
-  status: 1
+  status: 1,
+  ownerId: 2
 }, {
   carId: 5,
   make: 'Kia',
@@ -59,7 +63,8 @@ export const MOCK_CARS: Car[] = [{
   color: 'Silver',
   transmission: 'automatic',
   description: 'Beautiful hamster car',
-  status: 1
+  status: 1,
+  ownerId: 2
 }, {
   carId: 6,
   make: 'Chevy',
@@ -71,5 +76,6 @@ export const MOCK_CARS: Car[] = [{
   color: 'Black',
   transmission: 'automatic',
   description: 'Made to haul',
-  status: 1
+  status: 1,
+  ownerId: 2
 }];

@@ -20,4 +20,9 @@ export class CarService {
     // Eventually will be GET request to find specific car
     return of(MOCK_CARS.find(car => car.carId === carId));
   }
+
+  getUsersCars(userId: number): Observable<Car[]> {
+    // Send userId to backend & return list of all their cars
+    return of(MOCK_CARS.filter(car => car.ownerId === userId));
+  }
 }

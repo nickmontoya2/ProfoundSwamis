@@ -13,6 +13,7 @@ export class Car {
   // this can be a look up table: 0 = "not for sale"; 1 = "for sale"
   // maybe use an ENUM here on the backend to define these states (wouldn't be 0,1 based anymore)
   status: number;
-
+  // ownerId will be FK to user table
+  ownerId: number;
   constructor() {}
 }

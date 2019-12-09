@@ -9,7 +9,9 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   }, {
-    path: 'multi-car', component: MultiCarComponent
+    path: 'multi-car', component: MultiCarComponent, pathMatch: 'full'
+  }, {
+    path: 'multi-car:userId', component: MultiCarComponent, pathMatch: 'full'
   }, {
     path: 'car/:carId', component: SingleCarComponent
   }, {
