@@ -15,7 +15,8 @@ export const MOCK_CARS: Car[] = [{
   driveType: '2 wheel drive - front',
   description: 'Beautiful hamster car',
   status: 1,
-  ownerId: 1
+  ownerId: 1,
+  photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/Kia_Soul.jpeg'
 }, {
   carId: 2,
   make: 'Ford',
@@ -31,7 +32,8 @@ export const MOCK_CARS: Car[] = [{
   driveType: '2 wheel drive - rear',
   description: 'American Muscle',
   status: 1,
-  ownerId: 1
+  ownerId: 1,
+  photoLink: null
 }, {
   carId: 3,
   make: 'Chevy',
@@ -47,7 +49,8 @@ export const MOCK_CARS: Car[] = [{
   driveType: '4 wheel drive',
   description: 'Made to haul',
   status: 1,
-  ownerId: 1
+  ownerId: 1,
+  photoLink: null
 }, {
   carId: 4,
   make: 'Chevy',
@@ -63,7 +66,8 @@ export const MOCK_CARS: Car[] = [{
   driveType: '2 wheel drive - rear',
   description: 'Dope Camaro goes woo woo',
   status: 1,
-  ownerId: 2
+  ownerId: 2,
+  photoLink: null
 }, {
   carId: 1,
   make: 'Kia',
@@ -79,7 +83,8 @@ export const MOCK_CARS: Car[] = [{
   driveType: '2 wheel drive - front',
   description: 'Beautiful hamster car',
   status: 1,
-  ownerId: 1
+  ownerId: 1,
+  photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/Kia_Soul.jpeg'
 }, {
   carId: 3,
   make: 'Chevy',
@@ -95,5 +100,6 @@ export const MOCK_CARS: Car[] = [{
   driveType: '4 wheel drive',
   description: 'Made to haul',
   status: 1,
-  ownerId: 1
+  ownerId: 1,
+  photoLink: null
 }];
