@@ -3,6 +3,7 @@
     <div class="col-4" *ngFor="let car of cars" >
       <div class="card my-2">
         <!-- put content from car here -->
+        <img *ngIf="car.photoLink" class="card-img-top" src="{{ car.photoLink }}" alt="Card image cap">
         <h5 class="card-title">{{ car.year }} {{ car.make }} {{ car.model }}</h5>
         <h6 class="card-subtitle mb-2 text-muted"> ${{ car.value }} </h6>
         <p class="card-text">{{ car.description }}</p>
