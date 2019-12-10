@@ -1,4 +1,4 @@
-import { Car } from './car';
+import { Car } from './models/car';
 
 export const MOCK_CARS: Car[] = [{
   carId: 1,

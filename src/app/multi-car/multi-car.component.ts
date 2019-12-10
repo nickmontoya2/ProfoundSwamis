@@ -1,4 +1,4 @@
-import { Car } from './../car';
+import { Car } from '../models/car';
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../car.service';
 
