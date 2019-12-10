@@ -2,7 +2,7 @@
   <!-- Header area, maybe add photo of vehicle here -->
   <div class="jumbotron">
     <h1 class="display-3"> {{ car.year }} {{ car.make }} {{ car.model }} </h1>
-    <img *ngIf="car.photoLink"  src="{{ car.photoLink }}" alt="Image of Car">
+    <img *ngIf="car.photoLink" class="img-fluid" src="{{ car.photoLink }}" alt="Image of Car">
     <p class="lead"> {{ car.description }} </p>
     <p class="float-right">
       ${{ car.value }}
