@@ -18,6 +18,7 @@ export class Car {
   status: number;
   // ownerId will be FK to user table
   ownerId: number;
-
+  // Link to where the photo is stored in S3 bucket
+  photoLink: string;
   constructor() {}
 }

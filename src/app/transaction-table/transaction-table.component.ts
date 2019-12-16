@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Transaction } from '../transaction';
+import { Transaction } from '../models/transaction';
 import { TransactionTableService } from '../transaction-table.service';
 
 @Component({
