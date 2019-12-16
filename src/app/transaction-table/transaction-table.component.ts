@@ -21,7 +21,4 @@ export class TransactionTableComponent implements OnInit {
       }
     );
   }
-
-
-
 }
