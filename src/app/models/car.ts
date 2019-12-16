@@ -18,5 +18,6 @@ export class Car {
   status: number;
   // ownerId will be FK to user table
   ownerId: number;
+
   constructor() {}
 }

@@ -1,88 +1,91 @@
--- MySQL Workbench Forward Engineering
+-- MYSQL WORKBENCH FORWARD ENGINEERING
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema car_sales
+-- SCHEMA CAR_SALES
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema car_sales
+-- SCHEMA CAR_SALES
 -- -----------------------------------------------------
-DROP DATABASE IF EXISTS `car_sales`;
-CREATE SCHEMA IF NOT EXISTS `car_sales` DEFAULT CHARACTER SET utf8 ;
-USE `car_sales` ;
+DROP DATABASE IF EXISTS `CAR_SALES`;
+CREATE SCHEMA IF NOT EXISTS `CAR_SALES` DEFAULT CHARACTER SET UTF8 ;
+USE `CAR_SALES`;
 
 -- -----------------------------------------------------
--- Table `car_sales`.`user`
+-- TABLE `CAR_SALES`.`USER`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `car_sales`.`user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `username` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
-  `balance` INT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `CAR_SALES`.`USER` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `NAME` VARCHAR(45) NULL,
+  `USERNAME` VARCHAR(45) NULL,
+  `PASSWORD` VARCHAR(45) NULL,
+  `BALANCE` INT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = INNODB;
 
 
 -- -----------------------------------------------------
--- Table `car_sales`.`car`
+-- TABLE `CAR_SALES`.`CAR`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `car_sales`.`car` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `make` VARCHAR(45) NULL,
-  `model` VARCHAR(45) NULL,
-  `fuel` VARCHAR(45) NULL,
-  `mileage` INT NULL,
-  `transmission` VARCHAR(45) NULL,
-  `value` INT NULL,
-  `color` VARCHAR(45) NULL,
-  `year` INT NULL,
-  `description` VARCHAR(250) NULL,
-  `ownerId` INT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `owner_idx` (`ownerId` ASC) VISIBLE,
-  CONSTRAINT `owner`
-    FOREIGN KEY (`ownerId`)
-    REFERENCES `car_sales`.`user` (`id`)
+CREATE TABLE IF NOT EXISTS `CAR_SALES`.`CAR` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `MAKE` VARCHAR(45) NULL,
+  `MODEL` VARCHAR(45) NULL,
+  `ENGINE` VARCHAR(45) NULL,
+  `FUEL` VARCHAR(45) NULL,
+  `INTERIOR_COLOR` VARCHAR(45) NULL,
+  `EXTERIOR_COLOR` VARCHAR(45) NULL,
+  `MILEAGE` INT NULL,
+  `TRANSMISSION` VARCHAR(45) NULL,
+  `DRIVE_TYPE` VARCHAR(45) NULL,
+  `STATUS` INT NULL,
+  `VALUE` INT NULL,
+  `YEAR` INT NULL,
+  `DESCRIPTION` VARCHAR(250) NULL,
+  `OWNERID` INT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `OWNER_IDX` (`OWNERID` ASC) VISIBLE,
+  CONSTRAINT `OWNER`
+    FOREIGN KEY (`OWNERID`)
+    REFERENCES `CAR_SALES`.`USER` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+ENGINE = INNODB;
 
 -- -----------------------------------------------------
--- Table `car_sales`.`transaction`
+-- TABLE `CAR_SALES`.`TRANSACTION`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `car_sales`.`transaction` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `buyerId` INT NULL,
-  `sellerId` INT NULL,
-  `price` INT NULL,
-  `date` DATE NULL,
-  `carId` INT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `buyerId_idx` (`buyerId` ASC) VISIBLE,
-  INDEX `sellerId_idx` (`sellerId` ASC) VISIBLE,
-  INDEX `carId_idx` (`carId` ASC) VISIBLE,
-  CONSTRAINT `buyerId`
-    FOREIGN KEY (`buyerId`)
-    REFERENCES `car_sales`.`user` (`id`)
+CREATE TABLE IF NOT EXISTS `CAR_SALES`.`TRANSACTION` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `BUYERID` INT NULL,
+  `SELLERID` INT NULL,
+  `PRICE` INT NULL,
+  `DATE` DATE NULL,
+  `CARID` INT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `BUYERID_IDX` (`BUYERID` ASC) VISIBLE,
+  INDEX `SELLERID_IDX` (`SELLERID` ASC) VISIBLE,
+  INDEX `CARID_IDX` (`CARID` ASC) VISIBLE,
+  CONSTRAINT `BUYERID`
+    FOREIGN KEY (`BUYERID`)
+    REFERENCES `CAR_SALES`.`USER` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `sellerId`
-    FOREIGN KEY (`sellerId`)
-    REFERENCES `car_sales`.`user` (`id`)
+  CONSTRAINT `SELLERID`
+    FOREIGN KEY (`SELLERID`)
+    REFERENCES `CAR_SALES`.`USER` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `carId`
-    FOREIGN KEY (`carId`)
-    REFERENCES `car_sales`.`car` (`id`)
+  CONSTRAINT `CARID`
+    FOREIGN KEY (`CARID`)
+    REFERENCES `CAR_SALES`.`CAR` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = INNODB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -90,11 +93,37 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-insert into user(name, username, password, balance) values ('marc', 'marc', 'password', '1000000000');
-insert into user(name, username, password, balance) values ('nick', 'nick', 'password', '1000000000');
-insert into user(name, username, password, balance) values ('patrick', 'patrick', 'password', '1000000000');
+INSERT INTO USER(NAME, USERNAME, PASSWORD, BALANCE) VALUES ('MARC', 'MARC', 'PASSWORD', '1000000000');
+INSERT INTO USER(NAME, USERNAME, PASSWORD, BALANCE) VALUES ('NICK', 'NICK', 'PASSWORD', '1000000000');
+INSERT INTO USER(NAME, USERNAME, PASSWORD, BALANCE) VALUES ('PATRICK', 'PATRICK', 'PASSWORD', '1000000000');
 
-insert into car(make, model, fuel, mileage, transmission, value, color, year, description, ownerId) values ('Bugatti', 'Chiron', 'gasoline', 0, 'automatic', 2000000, 'chrome', 2021, 'test test test test', 1);
-insert into car(make, model, fuel, mileage, transmission, value, color, year, description, ownerId) values ('Lykan', 'HyperSport', 'gasoline', 22, 'automatic', 3500000, 'Matte Black', 2020, 'Lorem Ipsum', 2);
-insert into car(make, model, fuel, mileage, transmission, value, color, year, description, ownerId) values ('Oscar Mayer', 'Weinermobile', 'diesel', 99999999, 'manual', 950000, 'Orange', 1936, 'I wish I was an Oscar Mayer Weiner!!', 3);
+
+INSERT INTO CAR(MAKE, MODEL, ENGINE, FUEL, DRIVE_TYPE,  MILEAGE, TRANSMISSION, VALUE, INTERIOR_COLOR, EXTERIOR_COLOR, YEAR, DESCRIPTION, STATUS, OWNERID) VALUES 
+('BUGATTI', 'CHIRON', 'V20', 'GASOLINE', '4WD', 0, 'AUTOMATIC', 2000000, 'CHROME', 'CHROME', 2021, 'TEST TEST TEST TEST', 1, 1);
+INSERT INTO CAR(MAKE, MODEL, ENGINE, FUEL, DRIVE_TYPE,  MILEAGE, TRANSMISSION, VALUE, INTERIOR_COLOR, EXTERIOR_COLOR, YEAR, DESCRIPTION, STATUS, OWNERID) VALUES 
+('LYKAN', 'HYPERSPORT', 'V12', 'GASOLINE', '4WD', 22, 'AUTOMATIC', 3500000, 'MATTE BLACK', 'CHROME', 2020, 'LOREM IPSUM', 1, 2);
+INSERT INTO CAR(MAKE, MODEL, ENGINE, FUEL, DRIVE_TYPE,  MILEAGE, TRANSMISSION, VALUE, INTERIOR_COLOR, EXTERIOR_COLOR, YEAR, DESCRIPTION, STATUS, OWNERID) VALUES 
+('OSCAR MAYER', 'WEINERMOBILE', 'V2', 'DIESEL', '1WD', 99999999, 'MANUAL', 950000, 'ORANGE', 'BEIGE', 1936, 'I WISH I WAS AN OSCAR MAYER WEINER!!', 1, 3);
+
+
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (1, 2, 345, '2019-12-31', 1);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (2, 1, 345, '2019-12-30', 1);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (1, 3, 345, '2019-12-29', 1);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (3, 1, 345, '2019-12-28', 1);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (2, 3, 345, '2019-12-27', 3);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (3, 2, 345, '2019-12-26', 3);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (2, 3, 345, '2019-12-27', 2);
+INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (3, 2, 345, '2019-12-26', 2);
+
+-- SELECT * FROM TRANSACTION;
+-- SELECT * FROM USER;
+SELECT all FROM CAR;
+-- SELECT * FROM TRANSACTION INNER JOIN USER ON TRANSACTION.BUYERID = USER.ID 
+-- UNION
+-- SELECT * FROM TRANSACTION INNER JOIN USER ON TRANSACTION.SELLERID = USER.ID;
+
+-- DROP DATABASE car_sales;
+
+
+-- DROP database car_sales;
 

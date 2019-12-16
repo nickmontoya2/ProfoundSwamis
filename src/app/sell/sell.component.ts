@@ -1,3 +1,4 @@
+import { Car } from './../models/car';
 import { Component, OnInit } from '@angular/core';
 import { Makes } from './../models/makes';
 
@@ -7,6 +8,8 @@ import { Makes } from './../models/makes';
   styleUrls: ['./sell.component.css']
 })
 export class SellComponent implements OnInit {
+
+  temp: Car = new Car();
   makes = Makes;
   selectedCar = 'Aston Martin';
 
@@ -17,6 +20,12 @@ export class SellComponent implements OnInit {
   selectChangeHandler(event: any) {
     // update the ui
     this.selectedCar = event.target.value;
+  }
+
+  submit(car: Car) {
+    console.log(this.temp);
+    this.temp = new Car();
+    // alert('Your car has been posted for sale!');
   }
 
 }
