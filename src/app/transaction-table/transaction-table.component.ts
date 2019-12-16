@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Transaction } from '../transaction';
+import { TransactionTableService } from '../transaction-table.service';
 
 @Component({
   selector: 'app-transaction-table',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionTableComponent implements OnInit {
 
-  constructor() { }
+  listOfTransactions: Transaction[] = [];
+
+  constructor(private service: TransactionTableService) { }
 
   ngOnInit() {
+    this.service.list().subscribe(
+      response => {
+        this.listOfTransactions = response;
+      }
+    );
+    console.log(this.listOfTransactions);
   }
+
+
 
 }
