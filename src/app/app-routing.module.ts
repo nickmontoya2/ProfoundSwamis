@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MultiCarComponent } from './multi-car/multi-car.component';
 import { SingleCarComponent } from './single-car/single-car.component';
+import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
     path: 'multi-car/:userId', component: MultiCarComponent, pathMatch: 'full'
   }, {
     path: 'car/:carId', component: SingleCarComponent
+  }, {
+    path: 'transaction-history', component: TransactionTableComponent
   }, {
     path: '', redirectTo: '/login', pathMatch: 'full'
   }];

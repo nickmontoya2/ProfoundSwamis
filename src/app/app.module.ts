@@ -7,6 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { MultiCarComponent } from './multi-car/multi-car.component';
 import { SingleCarComponent } from './single-car/single-car.component';
+import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SingleCarComponent } from './single-car/single-car.component';
     LoginComponent,
     MultiCarComponent,
     SingleCarComponent,
+    TransactionTableComponent,
   ],
   imports: [
     BrowserModule,
