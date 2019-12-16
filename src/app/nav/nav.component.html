@@ -4,7 +4,7 @@
   <a *ngIf="!userLoginService.currUser.loggedIn" [routerLink]="['/login']">Login</a>
   <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/sell']">Sell a car</a>
   <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/my-cars']">My Cars</a>
-
+  <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/transaction-history']">Transaction History</a>
 </div>
 
 <div id="main">
