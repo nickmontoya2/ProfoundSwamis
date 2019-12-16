@@ -3,7 +3,7 @@
   <a [routerLink]="['/multi-car']">All Cars</a>
   <a *ngIf="!userLoginService.currUser.loggedIn" [routerLink]="['/login']">Login</a>
   <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/sell']">Sell a car</a>
-  <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/my-cars']">My Cars</a>
+  <a *ngIf="userLoginService.currUser.loggedIn" routerLink="/multi-car/{{userLoginService.currUser.userId}}">My Cars</a>
   <a *ngIf="userLoginService.currUser.loggedIn" [routerLink]="['/transaction-history']">Transaction History</a>
 </div>
 

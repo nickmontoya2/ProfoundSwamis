@@ -18,14 +18,16 @@ export class CarService {
     return this.http.get(this.url + api);
   }
 
-  getCar(carId: number): Observable<Car> {
+  getCar(carId: number): Observable<any> {
     // Eventually will be GET request to find specific car
     return of(MOCK_CARS.find(car => car.carId === carId));
   }
 
-  getUsersCars(userId: number): Observable<Car[]> {
+  getUsersCars(userId: number): Observable<any> {
     // Send request to backend & return list of all their cars
     // Will use session on backend to grab userId
-    return of(MOCK_CARS.filter(car => car.ownerId === userId));
+    const api = 'cars/user/' + userId;
+    return this.http.get(this.url + api);
+    // return of(MOCK_CARS.filter(car => car.ownerId === userId));
   }
 }
