@@ -20,7 +20,9 @@ export class CarService {
 
   getCar(carId: number): Observable<any> {
     // Eventually will be GET request to find specific car
-    return of(MOCK_CARS.find(car => car.carId === carId));
+    const api = 'cars/car/' + carId;
+    return this.http.get(this.url + api);
+    // return of(MOCK_CARS.find(car => car.carId === carId));
   }
 
   getUsersCars(userId: number): Observable<any> {

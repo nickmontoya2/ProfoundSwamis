@@ -35,8 +35,10 @@ export class MultiCarComponent implements OnInit {
   }
 
   getUsersCars(userId: number): void {
+    console.log('Grabbing specific users cars');
     this.carService.getUsersCars(userId).subscribe(response => {
         this.cars = response;
+        console.log(this.cars);
       });
   }
 
