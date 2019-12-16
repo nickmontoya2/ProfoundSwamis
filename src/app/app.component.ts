@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-car-sales';
-  loggedIn = false;
+  // loggedIn = false;
 
   constructor(public userLoginService: UserLoginService, router: Router) {
 
