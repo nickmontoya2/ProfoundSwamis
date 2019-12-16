@@ -1,1 +1,17 @@
-<p>transaction-table page</p>
+<div class="container">
+  <table class="table">
+    <thead>
+      <th scope="row">Transaction ID</th>
+      <th scope="row">Price</th>
+      <th scope="row">Date</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tx of listOfTransactions" >
+        <td> {{ tx.id }} </td>
+        <td> {{ tx.price }} </td>
+        <td> {{ tx.date }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
