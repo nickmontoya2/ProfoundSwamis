@@ -9,6 +9,7 @@ import { MultiCarComponent } from './multi-car/multi-car.component';
 import { SingleCarComponent } from './single-car/single-car.component';
 import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 import { SellComponent } from './sell/sell.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SellComponent } from './sell/sell.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
