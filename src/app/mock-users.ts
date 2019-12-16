@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from './models/user';
 
 // Sample users to use for login page
 export const USERS: User[] = [
