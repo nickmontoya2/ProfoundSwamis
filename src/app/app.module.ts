@@ -7,6 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { MultiCarComponent } from './multi-car/multi-car.component';
 import { SingleCarComponent } from './single-car/single-car.component';
+import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 import { SellComponent } from './sell/sell.component';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SellComponent } from './sell/sell.component';
     LoginComponent,
     MultiCarComponent,
     SingleCarComponent,
+    TransactionTableComponent,
     SellComponent,
   ],
   imports: [
