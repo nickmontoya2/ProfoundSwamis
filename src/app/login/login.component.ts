@@ -18,9 +18,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.error = !(this.loginService.login(this.user));
-    this.user = new User();
-    if (this.loginService.currUser.name) {
+
+    this.loginService.login(this.user).subscribe(currUser => {
+      this.user = currUser;
+    });
+    // handle errors here
+
+    // this.error = !(this.loginService.login(this.user));
+    if (this.user.name) {
+      this.user = new User();
       this.router.navigate(['/multi-car']);
     }
   }
