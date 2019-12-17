@@ -1,5 +1,7 @@
+import { CookieService } from 'ngx-cookie-service';
 import { UserLoginService } from './../user-login.service';
 import { Component, OnInit } from '@angular/core';
+
 // import * as $ from 'jquery';
 @Component({
   selector: 'app-nav',
@@ -9,12 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
 
   // loggedIn = false;
+  userCookie: string;
 
-  constructor(public userLoginService: UserLoginService) { }
+  constructor(
+    public userLoginService: UserLoginService,
+    private cookieService: CookieService
+    ) { }
 
   ngOnInit() {
     // this.loggedIn = this.userLoginService.currUser.loggedIn;
     // console.log("test: " + this.userLoginService.currUser.loggedIn);
+    this.userCookie = this.cookieService.get('userId');
+    console.log(this.userCookie);
   }
 
   openNav() {

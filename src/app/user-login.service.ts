@@ -17,25 +17,12 @@ export class UserLoginService {
   constructor(private http: HttpClient) { }
 
   /*
-  * This method will eventually be a post request to the backend
-  * checking if the provided info is a valid user.
-  * For now it's just checking if the user exists in the mock-users data
-  * I believe the portion to create a session with userId should happen on the server side
-  * I don't think login is a situation to create an observable since it will just be 1 post request
+  * Send POST to backend to log user in & create cookie
   */
   login(currUser: User): Observable<any> {
     console.log('Username: ', currUser.username, 'Password: ', currUser.password);
 
     const api = 'http://localhost:8080/users/login';
     return this.http.post(api, currUser);
-
-    // for (const user of USERS) {
-    //   if (user.username === currUser.username && user.password === currUser.password) {
-    //     this.currUser = user;
-    //     this.currUser.loggedIn = true;
-    //     console.log(this.currUser.name);
-    //     return this.currUser.loggedIn;
-    //   }
-    // }
   }
 }
