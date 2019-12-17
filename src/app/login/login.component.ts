@@ -21,13 +21,17 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(this.user).subscribe(currUser => {
       this.user = currUser;
+
+      // Moved this inside subscribe function
+      // because it's async & needs to wait for user to be assigned
+      if (this.user.name) {
+        this.user = new User();
+        this.router.navigate(['/multi-car']);
+        this.loginService.currUser.loggedIn = true;
+      }
     });
-    // handle errors here
 
     // this.error = !(this.loginService.login(this.user));
-    if (this.user.name) {
-      this.user = new User();
-      this.router.navigate(['/multi-car']);
-    }
+
   }
 }
