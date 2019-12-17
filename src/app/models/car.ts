@@ -20,5 +20,7 @@ export class Car {
   ownerId: number;
   // Link to where the photo is stored in S3 bucket
   photoLink: string;
-  constructor() {}
+  constructor() {
+    this.photoLink = '';
+  }
 }

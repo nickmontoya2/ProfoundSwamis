@@ -10,7 +10,7 @@ import { Car } from '../models/car';
 })
 export class SingleCarComponent implements OnInit {
 
-  car: Car;
+  car: Car = new Car();
 
   constructor(
     private carService: CarService,
