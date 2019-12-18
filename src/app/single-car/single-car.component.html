@@ -6,7 +6,7 @@
     <p class="lead"> {{ car.description }} </p>
     <p class="float-right">
       ${{ car.value }}
-      <button *ngIf="car.status" type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirmModal" role="button">Purchase</button>
+      <button *ngIf="car.saleStatus == 'FOR_SALE'" type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirmModal" role="button">Purchase</button>
     </p>
   </div>
   <!-- Area to display other fields -->
@@ -56,11 +56,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to buy this {{ car.year }} {{ car.make }} {{ car.model }}? </p>
+        <p *ngIf="loginService.currUser.balance >= car.value">Are you sure you want to buy this {{ car.year }} {{ car.make }} {{ car.model }}? </p>
+        <p *ngIf="loginService.currUser.balance < car.value">Sorry, you don't have enough funds to purchase this vehicle.. you broke bish</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Purchase</button>
+        <button (click)="purchase()" *ngIf="loginService.currUser.balance >= car.value"  type="button" class="btn btn-success">Purchase</button>
       </div>
     </div>
   </div>

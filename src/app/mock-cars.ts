@@ -1,3 +1,4 @@
+import { USERS } from './mock-users';
 import { Car } from './models/car';
 
 export const MOCK_CARS: Car[] = [{
@@ -14,8 +15,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: '4 wheel drive',
   description: 'The road destroyer',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/bugatti_divo.jpg'
 }, {
   carId: 2,
@@ -31,8 +32,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'Racing Stripes for the racing types',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/bugatti_chiron.jpg'
 }, {
   carId: 3,
@@ -48,8 +49,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: '4 wheel drive',
   description: 'White out for a night out',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/bugatti_centodieci.jpg'
 }, {
   carId: 4,
@@ -65,8 +66,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'Vanquishing the anguishing',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/Aston_Martin_Vanquish.jpg'
 }, {
   carId: 5,
@@ -82,8 +83,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'Conceptual car raising the literal bar',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/aston_martin_valhalla.jpeg'
 }, {
   carId: 6,
@@ -99,8 +100,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: '4 wheel drive',
   description: 'This thing goes fast',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/bugatti_veyron_vitesse.jpg'
 }, {
   carId: 7,
@@ -116,8 +117,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'Get a ticket in the HyperSport, head to HyperCourt',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/w_motors_lykan.jpg'
 }, {
   carId: 8,
@@ -133,8 +134,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The ride home in the SuperSport is SuperShort',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/w_motors_fenyr.jpg'
 }, {
   carId: 9,
@@ -150,8 +151,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The Huracan for the amurricahn',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/lamborghini_huracan.jpg'
 }, {
   carId: 10,
@@ -167,8 +168,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'This word is hard to rhyme.',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/lamborghini_sian.jpg'
 }, {
   carId: 11,
@@ -184,8 +185,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The Centenario will take you far-io',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/lamborghini_centenario.jpg'
 }, {
   carId: 12,
@@ -201,8 +202,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The Aventador will cost you four... arms & legs',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'NOT_FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/lamborghini_aventador.jpg'
 }, {
   carId: 13,
@@ -218,8 +219,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The Trevita is tres sweeta',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'NOT_FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/koenigsegg_trevita.jpg'
 }, {
   carId: 14,
@@ -235,8 +236,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'Long Regera don\'t careuh',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'NOT_FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/koenigsegg_regera.jpg'
 }, {
   carId: 15,
@@ -252,8 +253,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'Buy now to get the Jesko for lessko!',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'NOT_FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/koenigsegg_jesko.jpg'
 }, {
   carId: 16,
@@ -269,8 +270,8 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The One-77 is like driving in heaven',
-  status: 1,
-  ownerId: 2,
+  saleStatus: 'NOT_FOR_SALE',
+  owner: USERS[0],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/aston_martin_one77.jpg'
 }, {
   carId: 17,
@@ -286,7 +287,7 @@ export const MOCK_CARS: Car[] = [{
   engine: '6-Cylinder',
   driveType: 'All Wheel Drive',
   description: 'The Agera will scare-ya!',
-  status: 1,
-  ownerId: 1,
+  saleStatus: 'NOT_FOR_SALE',
+  owner: USERS[1],
   photoLink: 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/koenigsegg_agera.jpg'
 }];
