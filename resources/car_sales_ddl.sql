@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `CAR_SALES`.`TRANSACTION` (
   `BUYERID` INT NULL,
   `SELLERID` INT NULL,
   `PRICE` INT NULL,
-  `DATE` DATE NULL,
+  `DATE` VARCHAR(45) NULL,
   `CARID` INT NULL,
   PRIMARY KEY (`ID`),
   INDEX `BUYERID_IDX` (`BUYERID` ASC) VISIBLE,
@@ -117,13 +117,26 @@ INSERT INTO TRANSACTION(BUYERID, SELLERID, PRICE, DATE, CARID) VALUES (3, 2, 345
 
 -- SELECT * FROM TRANSACTION;
 -- SELECT * FROM USER;
-SELECT all FROM CAR;
+-- SELECT * FROM CAR;
+-- select user.id, user.name, user.balance, car.id, car.make, car.model, car.ownerid from user inner join car where user.id = car.ownerid;
+-- select user.balance, car.ownerid from user inner join car where user.id = car.ownerid;
+-- update user.balance, car.ownerid inner join car on user.id = car.ownerid set user.balance = 999999 where user.id = 1;
+-- update car set car.ownerid = 1 where car.id = 1;
+-- select user.balance, car.ownerid from user
+-- inner join car on user.id = car.ownerid;
+
+-- this is to update the sellers funds and the owner id in 1 query
+-- need to update the buyers funds afterwards
+-- update user
+-- inner join car on user.id = car.ownerid
+-- set user.balance = balance + 1, car.ownerid = 1
+-- where user.id = 1;
+
+
 -- SELECT * FROM TRANSACTION INNER JOIN USER ON TRANSACTION.BUYERID = USER.ID 
 -- UNION
 -- SELECT * FROM TRANSACTION INNER JOIN USER ON TRANSACTION.SELLERID = USER.ID;
 
 -- DROP DATABASE car_sales;
 
-
--- DROP database car_sales;
 

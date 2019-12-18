@@ -1,7 +1,7 @@
 export const Makes = [
   {
     maker : 'Aston Martin',
-    cars : ['One77', 'Valhalla', 'Vanquish']
+    cars : ['One-77', 'Valhalla', 'Vanquish']
   },
   {
     maker : 'Bugatti',

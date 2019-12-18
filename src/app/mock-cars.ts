@@ -88,7 +88,7 @@ export const MOCK_CARS: Car[] = [{
 }, {
   carId: 6,
   make: 'Bugatti',
-  model: 'Veyron Vitesse',
+  model: 'Veyron',
   year: 2019,
   value: 129999,
   mileage: 6500,
@@ -105,7 +105,7 @@ export const MOCK_CARS: Car[] = [{
 }, {
   carId: 7,
   make: 'W Motors',
-  model: 'Lykan HyperSport',
+  model: 'Lykan',
   year: 2019,
   value: 435999,
   mileage: 7200,
@@ -122,7 +122,7 @@ export const MOCK_CARS: Car[] = [{
 }, {
   carId: 8,
   make: 'W Motors',
-  model: 'Fenyr SuperSport',
+  model: 'Fenryr',
   year: 2019,
   value: 438750,
   mileage: 2150,

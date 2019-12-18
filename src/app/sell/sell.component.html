@@ -2,6 +2,10 @@
     <!-- Header area, maybe add photo of vehicle here -->
     <div class="jumbotron">
       <h1 class="display"> Post a car for sale </h1>
+      <div *ngIf="picture != ''">
+        <img src={{picture}} alt="Post this car for sale" class="img-fluid">
+      </div>
+
     </div>
     <!-- Area to display other fields -->
     <form (ngSubmit)="submit()" ngNativeValidate>
@@ -10,25 +14,25 @@
           <div class="form-row">
             <div class="column mx-2">
               <label for="make">Make: </label>
-              <select [(ngModel)]="temp.make" (change)="selectChangeHandler($event)" class="form-control" id="carMake" name="make" required>
+              <select [(ngModel)]="temp.make" (change)="selectChangeHandler($event)" class="form-control" id="carMake" name="make" required placeholder="Aston Martin">
                 <option *ngFor="let make of makes" value="{{make.maker}}">{{make.maker}}</option>
               </select>
             </div>
             <div class="column mx-3" style="width: 130px">
               <label for="model">Model: </label>
-              <select [(ngModel)]="temp.model" *ngIf="selectedCar == 'Aston Martin'" class="form-control" id="" name="model" required>
+              <select (change)="selectPicture($event)" [(ngModel)]="temp.model" *ngIf="selectedCar == 'Aston Martin'" class="form-control" id="" name="model" required>
                 <option *ngFor="let model of makes[0].cars" value="{{model}}">{{model}}</option>
               </select>
-              <select [(ngModel)]="temp.model" *ngIf="selectedCar == 'Bugatti'" class="form-control" id="" name="model" required>
+              <select (change)="selectPicture($event)" [(ngModel)]="temp.model" *ngIf="selectedCar == 'Bugatti'" class="form-control" id="" name="model" required>
                 <option *ngFor="let model of makes[1].cars" value="{{model}}">{{model}}</option>
               </select>
-              <select [(ngModel)]="temp.model" *ngIf="selectedCar == 'Koenigsegg'" class="form-control" id="" name="model" required>
+              <select (change)="selectPicture($event)" [(ngModel)]="temp.model" *ngIf="selectedCar == 'Koenigsegg'" class="form-control" id="" name="model" required>
                 <option *ngFor="let model of makes[2].cars" value="{{model}}">{{model}}</option>
               </select>
-              <select [(ngModel)]="temp.model" *ngIf="selectedCar == 'Lamborghini'" class="form-control" id="" name="model" required>
+              <select (change)="selectPicture($event)" [(ngModel)]="temp.model" *ngIf="selectedCar == 'Lamborghini'" class="form-control" id="" name="model" required>
                 <option *ngFor="let model of makes[3].cars" value="{{model}}">{{model}}</option>
               </select>
-              <select [(ngModel)]="temp.model" *ngIf="selectedCar == 'WMotors'" class="form-control" id="" name="model" required>
+              <select (change)="selectPicture($event)" [(ngModel)]="temp.model" *ngIf="selectedCar == 'WMotors'" class="form-control" id="" name="model" required>
                 <option *ngFor="let model of makes[4].cars" value="{{model}}">{{model}}</option>
               </select>
             </div>
