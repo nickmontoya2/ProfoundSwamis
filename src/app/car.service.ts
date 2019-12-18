@@ -33,8 +33,8 @@ export class CarService {
     // return of(MOCK_CARS.filter(car => car.ownerId === userId));
   }
 
-  purchaseCar(buyerId: number, sellerId: number, car: number, value: number): void {
-
+  purchaseCar(buyerId: number, sellerId: number, car: number, value: number): Observable<any> {
+    console.log('Made it into service for buying car');
     const api = 'tx/purchase';
 
     const tx = {
@@ -49,7 +49,7 @@ export class CarService {
       },
       price: value
     };
-    this.http.post(this.url + api, tx);
+    return this.http.post(this.url + api, tx);
   }
 
 }

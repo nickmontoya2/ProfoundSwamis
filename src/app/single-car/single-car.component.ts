@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../car.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Car } from '../models/car';
 import { UserLoginService } from '../user-login.service';
 
@@ -16,6 +17,7 @@ export class SingleCarComponent implements OnInit {
   constructor(
     private carService: CarService,
     private route: ActivatedRoute,
+    private router: Router,
     public loginService: UserLoginService
   ) { }
 
@@ -38,13 +40,17 @@ export class SingleCarComponent implements OnInit {
     console.log('Seller id: ', this.car.owner.userId);
     console.log('Car id: ', this.car.carId);
     console.log('Car price: ', this.car.value);
+    const redirect = '/multi-car/' + this.loginService.currUser.userId;
 
     this.carService.purchaseCar(
       this.loginService.currUser.userId,
       this.car.owner.userId,
       this.car.carId,
       this.car.value
-      );
+      ).subscribe(response => {
+        console.log(response);
+        this.router.navigate([redirect]);
+    });
   }
 
 }
