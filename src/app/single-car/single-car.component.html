@@ -61,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button (click)="purchase()" *ngIf="loginService.currUser.balance >= car.value"  type="button" class="btn btn-success">Purchase</button>
+        <button (click)="purchase()" *ngIf="loginService.currUser.balance >= car.value"  type="button" class="btn btn-success" data-dismiss="modal">Purchase</button>
       </div>
     </div>
   </div>
