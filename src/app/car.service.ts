@@ -32,4 +32,24 @@ export class CarService {
     return this.http.get(this.url + api);
     // return of(MOCK_CARS.filter(car => car.ownerId === userId));
   }
+
+  purchaseCar(buyerId: number, sellerId: number, car: number, value: number): void {
+
+    const api = 'tx/purchase';
+
+    const tx = {
+      buyer: {
+        userId: buyerId
+      },
+      seller: {
+        userId: sellerId
+      },
+      car: {
+        carId: car
+      },
+      price: value
+    };
+    this.http.post(this.url + api, tx);
+  }
+
 }
