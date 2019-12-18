@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Makes } from './../models/makes';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserLoginService } from '../user-login.service';
 
 @Component({
   selector: 'app-sell',
@@ -17,7 +18,7 @@ export class SellComponent implements OnInit {
   picture = '';
   url = 'http://localhost:8080/chinook/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public userLoginService: UserLoginService) { }
 
   ngOnInit() {}
 
@@ -26,11 +27,11 @@ export class SellComponent implements OnInit {
     this.selectedCar = event.target.value;
   }
 
-  submit(car: Car): Observable<any> {
+  submit(car: Car)/*: Observable<any>*/ {
     console.log(this.temp);
     this.temp = new Car();
     // alert('Your car has been posted for sale!');
-    return this.http.post(this.url, car);
+    // return this.http.post(this.url, car);
   }
 
   selectPicture(event: any) {
@@ -41,6 +42,14 @@ export class SellComponent implements OnInit {
       case 'Divo':
         this.picture = 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/bugatti_divo.jpg';
         this.temp.photoLink = this.picture;
+        this.temp.fuel = 'gasoline';
+        this.temp.exteriorColor = 'black';
+        this.temp.interiorColor = 'black';
+        this.temp.transmission = 'automatic';
+        this.temp.engine = 'W16';
+        this.temp.driveType = '4 wheel drive';
+        this.temp.saleStatus = 'FOR_SALE';
+        this.temp.owner = this.userLoginService.currUser;
         return;
       case 'Chiron':
           this.picture = 'https://angular-car-sales.s3.amazonaws.com/Car+Photos/bugatti_chiron.jpg';
