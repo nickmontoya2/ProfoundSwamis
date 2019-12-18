@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
       if (this.user.name) {
         this.loginService.currUser.loggedIn = true;
         this.loginService.currUser.userId = currUser.userId;
+        this.loginService.currUser.name = this.user.name;
         this.router.navigate(['/multi-car']);
       } else {
         this.user = new User();
