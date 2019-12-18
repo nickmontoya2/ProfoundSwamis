@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       // because it's async & needs to wait for user to be assigned
       if (this.user.name) {
         this.loginService.currUser.loggedIn = true;
-        this.loginService.currUser.userId = currUser.id;
+        this.loginService.currUser.userId = currUser.userId;
         this.router.navigate(['/multi-car']);
       } else {
         this.user = new User();

@@ -1,17 +1,48 @@
 <div class="container">
-  <table class="table">
-    <thead>
-      <th scope="row">Transaction ID</th>
-      <th scope="row">Price</th>
-      <th scope="row">Date</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let tx of listOfTransactions" >
-        <td> {{ tx.id }} </td>
-        <td> {{ tx.price }} </td>
-        <td> {{ tx.date }} </td>
-      </tr>
-    </tbody>
-  </table>
-
+  <div class="row">
+    <!-- Purchases table -->
+    <div class="table-responsive col-xs-6 mx-1">
+      <h2 class="sub-header">Purchases</h2>
+      <table class="table table-bordered table-striped">
+        <thead class = "thead-light">
+          <th scope="row">Transaction ID</th>
+          <th scope="row">Car</th>
+          <th scope="row">Price</th>
+          <th scope="row">Seller</th>
+          <th scope="row">Date</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tx of listOfPurchases" >
+            <td> {{ tx.id }} </td>
+            <td> {{ tx.car.make }} {{ tx.car.model }} </td>
+            <td> ${{ tx.price }} </td>
+            <td> @{{ tx.seller.username }} </td>
+            <td> {{ tx.date }} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Sales table -->
+    <div class="table-responsive col-xs-6 mx-1">
+      <h2 class="sub-header">Sales</h2>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+          <th scope="row">Transaction ID</th>
+          <th scope="row">Car</th>
+          <th scope="row">Price</th>
+          <th scope="row">Buyer</th>
+          <th scope="row">Date</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tx of listOfSales" >
+            <td> {{ tx.id }} </td>
+            <td> {{ tx.car.make }} {{ tx.car.model }} </td>
+            <td> ${{ tx.price }} </td>
+            <td> @{{ tx.buyer.username }} </td>
+            <td> {{ tx.date }} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -9,15 +9,23 @@ import { Transaction } from '../models/transaction';
 })
 export class TransactionTableComponent implements OnInit {
 
-  listOfTransactions: Transaction[] = [];
+  listOfPurchases: Transaction[] = [];
+  listOfSales: Transaction[] = [];
 
   constructor(private service: TransactionTableService) { }
 
   ngOnInit() {
-    this.service.list().subscribe(
+    // Get all purchases
+    this.service.listPurchases().subscribe(
       response => {
-        this.listOfTransactions = response;
-        console.log(this.listOfTransactions);
+        this.listOfPurchases = response;
+        console.log(this.listOfPurchases);
+      }
+    );
+    // Get all sales
+    this.service.listSales().subscribe(
+      response => {
+        this.listOfSales = response;
       }
     );
   }

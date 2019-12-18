@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { User } from './models/user';
 import { USERS } from './mock-users';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,10 @@ export class UserLoginService {
   users: User[] = USERS;
   currUser: User = new User();
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService
+    ) { }
 
   /*
   * Send POST to backend to log user in & create cookie

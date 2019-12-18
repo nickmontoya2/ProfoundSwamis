@@ -1,12 +1,13 @@
+import { Car } from './car';
 import { User } from './user';
 
 export class Transaction {
   id: number;
-  //buyerId: number;
-  //sellerId: number;
+  buyer: User;
+  seller: User;
   price: number;
   date: string;
-  //carId: number;
+  car: Car;
 
   constructor() {
     this.id = null;
