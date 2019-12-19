@@ -1,4 +1,6 @@
 <div class="container">
+  <h1 *ngIf="header == 1"  class="sub-header text-center">For Sale</h1>
+  <h1 *ngIf="header == 2"  class="sub-header text-center">My Cars</h1>
   <div class="row card-group">
     <div class="col-4" *ngFor="let car of cars" >
       <div class="card my-2">

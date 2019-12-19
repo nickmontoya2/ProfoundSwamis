@@ -13,6 +13,7 @@ import { UserLoginService } from '../user-login.service';
 export class SingleCarComponent implements OnInit {
 
   car: Car = new Car();
+  status = '';
 
   constructor(
     private carService: CarService,
@@ -31,6 +32,11 @@ export class SingleCarComponent implements OnInit {
       this.car = response;
       console.log(this.car);
       console.log(this.loginService.currUser.balance);
+      if (this.car.saleStatus === 'FOR_SALE') {
+        this.status = 'for sale.';
+      } else {
+        this.status = 'not for sale.';
+      }
     });
   }
 
@@ -51,6 +57,10 @@ export class SingleCarComponent implements OnInit {
         console.log(response);
         this.router.navigate([redirect]);
     });
+  }
+
+  delete(): void {
+    console.log('pressed delete button');
   }
 
 }

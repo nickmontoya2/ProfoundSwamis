@@ -4,9 +4,15 @@
     <h1 class="display-3"> {{ car.year }} {{ car.make }} {{ car.model }} </h1>
     <img *ngIf="car.photoLink" class="img-fluid" src="{{ car.photoLink }}" alt="Image of Car">
     <p class="lead"> {{ car.description }} </p>
+    <p *ngIf="car.owner.userId == loginService.currUser.userId">
+      This car is currently {{ status }} <br>
+      <button *ngIf="car.saleStatus == 'FOR_SALE'" type="button" class="btn btn-sm btn-danger" role="button">Remove from sales</button>
+      <button *ngIf="car.saleStatus == 'NOT_FOR_SALE'" type="button" class="btn btn-sm btn-success" role="button">Add to sales</button>
+    </p>
     <p class="float-right">
       ${{ car.value }}
       <button *ngIf="car.owner.userId != loginService.currUser.userId" type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirmModal" role="button">Purchase</button>
+      <button *ngIf="car.owner.userId == loginService.currUser.userId" type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#confirmModal" role="button">Delete Car</button>
     </p>
   </div>
   <!-- Area to display other fields -->
@@ -50,18 +56,27 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Confirm Purchase</h5>
+        <h5 *ngIf="car.owner.userId != loginService.currUser.userId"  class="modal-title" id="exampleModalLabel">Confirm Purchase</h5>
+        <h5 *ngIf="car.owner.userId == loginService.currUser.userId"  class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div *ngIf="car.owner.userId != loginService.currUser.userId"  class="modal-body">
         <p *ngIf="loginService.currUser.balance >= car.value">Are you sure you want to buy this {{ car.year }} {{ car.make }} {{ car.model }}? </p>
         <p *ngIf="loginService.currUser.balance < car.value">Sorry, you don't have enough funds to purchase this vehicle</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <div *ngIf="car.owner.userId == loginService.currUser.userId" class="modal-body" >
+        <p>Are you sure you want to remove this {{ car.make }} {{ car.model }}? </p>
+      </div>
+      <div *ngIf="car.owner.userId != loginService.currUser.userId" class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button (click)="purchase()" *ngIf="loginService.currUser.balance >= car.value"  type="button" class="btn btn-success" data-dismiss="modal">Purchase</button>
+      </div>
+      <div *ngIf="car.owner.userId == loginService.currUser.userId" class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- make this click function delete() -->
+        <button (click)="delete()" type="button" class="btn btn-danger" data-dismiss="modal">Delete Car</button>
       </div>
     </div>
   </div>

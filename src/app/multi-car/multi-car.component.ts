@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MultiCarComponent implements OnInit {
 
   cars: Car[] = [];
+  header = 0;
 
   constructor(
     private carService: CarService,
@@ -22,9 +23,11 @@ export class MultiCarComponent implements OnInit {
       // Call function to grab cars for specific user
       console.log('Looking for specific users cars');
       this.getUsersCars(+this.route.snapshot.paramMap.get('userId'));
+      this.header = 2;
     } else {
       // grab all FOR_SALE cars
       this.getCars();
+      this.header = 1;
     }
   }
 
