@@ -61,6 +61,12 @@ export class SingleCarComponent implements OnInit {
 
   delete(): void {
     console.log('pressed delete button');
+    const redirect = '/multi-car/' + this.loginService.currUser.userId;
+
+    this.carService.deleteCar(this.car.carId).subscribe(response => {
+      console.log(response);
+      this.router.navigate([redirect]);
+    });
   }
 
 }

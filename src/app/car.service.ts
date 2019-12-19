@@ -52,4 +52,9 @@ export class CarService {
     return this.http.post(this.url + api, tx);
   }
 
+  deleteCar(carId: number): Observable<any> {
+    const api = 'cars/remove/' + carId;
+    return this.http.delete(this.url + api);
+  }
+
 }
