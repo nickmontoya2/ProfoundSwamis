@@ -6,8 +6,8 @@
     <p class="lead"> {{ car.description }} </p>
     <p *ngIf="car.owner.userId == loginService.currUser.userId">
       This car is currently {{ status }} <br>
-      <button *ngIf="car.saleStatus == 'FOR_SALE'" type="button" class="btn btn-sm btn-danger" role="button">Remove from sales</button>
-      <button *ngIf="car.saleStatus == 'NOT_FOR_SALE'" type="button" class="btn btn-sm btn-success" role="button">Add to sales</button>
+      <button *ngIf="car.saleStatus == 'FOR_SALE'" (click)="setNotForSale()"  type="button" class="btn btn-sm btn-danger" role="button">Remove from sales</button>
+      <button *ngIf="car.saleStatus == 'NOT_FOR_SALE'" (click)="setForSale()" type="button" class="btn btn-sm btn-success" role="button">Add to sales</button>
     </p>
     <p class="float-right">
       ${{ car.value }}

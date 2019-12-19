@@ -69,4 +69,24 @@ export class SingleCarComponent implements OnInit {
     });
   }
 
+  setNotForSale(): void {
+    console.log('should change status to not being for sale');
+    const redirect = '/multi-car/' + this.loginService.currUser.userId;
+
+    this.carService.updateStatus(this.car.carId, 'NOT_FOR_SALE').subscribe(response => {
+      console.log(response);
+      this.router.navigate([redirect]);
+    });
+  }
+
+  setForSale(): void {
+    console.log('should change status to being for sale');
+    const redirect = '/multi-car/' + this.loginService.currUser.userId;
+
+    this.carService.updateStatus(this.car.carId, 'FOR_SALE').subscribe(response => {
+      console.log(response);
+      this.router.navigate([redirect]);
+    });
+  }
+
 }

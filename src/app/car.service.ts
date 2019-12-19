@@ -57,4 +57,9 @@ export class CarService {
     return this.http.delete(this.url + api);
   }
 
+  updateStatus(carId: number, status: string): Observable<any> {
+    const api = 'cars/car/update/' + carId + '/' + status;
+    return this.http.put(this.url + api, '');
+  }
+
 }
