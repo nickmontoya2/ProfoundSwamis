@@ -8,7 +8,7 @@ import { UserLoginService } from './user-login.service';
 })
 export class TransactionTableService {
 
-  url = 'http://localhost:8080/tx/';
+  url = 'http://3.135.115.241:8080/tx/';
 
   constructor(
     private http: HttpClient,

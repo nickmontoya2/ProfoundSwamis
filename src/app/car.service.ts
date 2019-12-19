@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CarService {
-  url = 'http://localhost:8080/';
+  url = 'http://3.135.115.241:8080/';
 
   constructor(private http: HttpClient) { }
 

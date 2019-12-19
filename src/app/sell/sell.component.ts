@@ -17,7 +17,7 @@ export class SellComponent implements OnInit {
   makes = Makes;
   selectedCar = 'Aston Martin';
   picture = '';
-  url = 'http://localhost:8080/cars/car';
+  url = 'http://3.135.115.241:8080/cars/car';
 
   constructor(private http: HttpClient, public userLoginService: UserLoginService, private router: Router) { }
 

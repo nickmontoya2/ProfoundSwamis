@@ -26,7 +26,7 @@ export class UserLoginService {
   login(currUser: User): Observable<any> {
     console.log('Username: ', currUser.username, 'Password: ', currUser.password);
 
-    const api = 'http://localhost:8080/users/login';
+    const api = 'http://3.135.115.241:8080/users/login';
     return this.http.post(api, currUser);
   }
 }
