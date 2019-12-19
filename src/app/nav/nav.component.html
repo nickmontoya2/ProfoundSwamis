@@ -9,6 +9,5 @@
 
 <div id="main">
   <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
-  <span *ngIf="userLoginService.currUser.loggedIn" class="float-right greeting">Hello, {{userLoginService.currUser.name}}</span>
-  <div class="text-center">Car Sales</div>
+  <span *ngIf="userLoginService.currUser.loggedIn" class="float-right greeting">Hello, {{userLoginService.currUser.name}}. <br> Your Balance: ${{ userLoginService.currUser.balance }}</span>
 </div>

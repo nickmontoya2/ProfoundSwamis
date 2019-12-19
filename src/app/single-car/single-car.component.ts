@@ -56,6 +56,7 @@ export class SingleCarComponent implements OnInit {
       ).subscribe(response => {
         console.log(response);
         this.router.navigate([redirect]);
+        this.loginService.currUser.balance -= this.car.value;
     });
   }
 
